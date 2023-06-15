@@ -2,40 +2,31 @@
 #
 # .pylintrc guide: https://github.com/PyCQA/pylint/blob/cfc393a8dff9ec09bd2fcb25857e772ae04a4991/examples/pylintrc
 #
-# Notes:
-#
-# 	- Values are comma separated.
-#	- Place each exception on a newline.
-# 	- Include a comma after each new entry.
-# 	- Optionally, a comment for the value if additional context is needed,
-#		e.g. disabled warnings, where normally warnings are our guide.
-#
 
 [MAIN]
 extension-pkg-whitelist=
     pydantic, # binary module validation, Pydantic/Pylint recommendation.
 
 ignore=
-	LICENSE,
-	.pylintrc,
+    LICENSE,
+    .pylintrc,
 
 ignore-patterns=
-	^(.+).ini$,
-	.gitignore,
-	.pre-commit-config.yaml,
-	^(.+).md$,
-	^(.+).sh$,
-	^(.+).service$,
+    ^(.+).ini$,
+    ^(.+).md$,
+    ^(.+).sh$,
+    ^(.+).service$,
+    ^(.+).json,
+    ^(.+).yml,
+    ^(.+).yaml,
+    ^\.,
 
 ignore-paths=
-    .git/.,
     requirements/.,
-    .github/,
     tests/fixtures/vcrpy/.,
-    .vscode/.,
 
 [MESSAGES CONTROL]
 
 disable =
-	C0301, 	# line-length too long, see Black documented recommendations.
-	W3101,  # requests library, missing timeout, new on upgrade from 2.14 to 2.15
+    C0301, 	# line-length too long, see Black documented recommendations.
+    C0115,  # No docstring for Class.
