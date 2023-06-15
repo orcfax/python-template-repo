@@ -19,11 +19,13 @@ ignore-patterns=
     ^(.+).json,
     ^(.+).yml,
     ^(.+).yaml,
+    ^(.+).toml,
     ^\.,
 
 ignore-paths=
     requirements/.,
     tests/fixtures/vcrpy/.,
+    Makefile,
 
 [MESSAGES CONTROL]
 
