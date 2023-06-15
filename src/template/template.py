@@ -1,6 +1,8 @@
 """Python template repository.
 
 Baseline template for future Python code related to this project.
+
+Replace this docstring and code below with your own code as required.
 """
 
 

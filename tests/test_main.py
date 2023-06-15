@@ -1,6 +1,6 @@
 """Placeholder tests."""
 
-from main import main
+from src.template.template import main
 
 
 def test_none():
