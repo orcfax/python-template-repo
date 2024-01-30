@@ -24,8 +24,19 @@ package-upload: clean package-deps package-check            ## Upload package to
 
 package: package-upload
 
-upgrade:                                                    ## Upgrade project dependencies.
+pre-commit-checks:                                          ## Run pre-commit-checks.
+	pre-commit run --all-files
+
+upgrade:                                                    ## Upgrade project dependencies
 	pip-upgrade
+
+docs:                                                       ## Generate documentation
+	pdoc3 --force --html -o docs src/
+	mv docs/src/* docs/.
+	rm -r docs/src
+
+serve-docs:                                                 ## Serve the documentation
+	python3 -m http.server --directory docs/
 
 clean:                                                      ## Clean the package directory
 	rm -rf src/*.egg-info/

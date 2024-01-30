@@ -66,12 +66,15 @@ repository:
 
 ```make
 clean                          Clean the package directory
+docs                           Generate documentation
 help                           Print this help message
 package-check                  Check the distribution is valid
 package-deps                   Upgrade dependencies for packaging
 package-source                 Package the source code
 package-upload                 Upload package to pypi
 package-upload-test            Upload package to test.pypi
+pre-commit-checks              Run pre-commit-checks.
+serve-docs                     Serve the documentation
 tar-source                     Package repository as tar for easy distribution
 upgrade                        Upgrade project dependencies
 ```
