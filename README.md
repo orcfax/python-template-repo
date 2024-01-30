@@ -15,6 +15,12 @@ source venv/bin/activate
 python -m pip install -r requirements/local.txt
 ```
 
+#### Upgrade dependencies
+
+A `make` recipe is included, simply call `make upgrade`. Alternatively run
+`pip-upgrader` once the local requirements have been installed and follow the
+prompts. `requirements.txt` and `local.txt` can be updated as desired.
+
 ### tox
 
 #### Run tests (all)
@@ -60,13 +66,14 @@ repository:
 
 ```make
 clean                          Clean the package directory
-help                           Print this help message.
+help                           Print this help message
 package-check                  Check the distribution is valid
 package-deps                   Upgrade dependencies for packaging
 package-source                 Package the source code
 package-upload                 Upload package to pypi
 package-upload-test            Upload package to test.pypi
 tar-source                     Package repository as tar for easy distribution
+upgrade                        Upgrade project dependencies
 ```
 
 ### pyproject.toml
