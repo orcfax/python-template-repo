@@ -17,7 +17,7 @@ python -m pip install -r requirements/local.txt
 
 #### Upgrade dependencies
 
-A `make` recipe is included, simply call `make upgrade`. Alternatively run
+A `just` recipe is included, simply call `just upgrade`. Alternatively run
 `pip-upgrader` once the local requirements have been installed and follow the
 prompts. `requirements.txt` and `local.txt` can be updated as desired.
 
@@ -59,24 +59,25 @@ found [here][pre-commit-1].
 
 ## Packaging
 
-The `Makefile` contains helper functions for packaging and release.
+The `justfile` contains helper functions for packaging and release.
 
-Makefile functions can be reviewed by calling `make`  from the root of this
+`justfile` functions can be reviewed by calling `just`  from the root of this
 repository:
 
-```make
-clean                          Clean the package directory
-docs                           Generate documentation
-help                           Print this help message
-package-check                  Check the distribution is valid
-package-deps                   Upgrade dependencies for packaging
-package-source                 Package the source code
-package-upload                 Upload package to pypi
-package-upload-test            Upload package to test.pypi
-pre-commit-checks              Run pre-commit-checks.
-serve-docs                     Serve the documentation
-tar-source                     Package repository as tar for easy distribution
-upgrade                        Upgrade project dependencies
+```just
+Available recipes:
+    clean               # Clean the package directory
+    docs                # Generate documentation
+    help                # Help
+    package-check       # Check the distribution is valid
+    package-deps        # Upgrade dependencies for packaging
+    package-source      # Package the source code
+    package-upload      # Upload package to pypi
+    package-upload-test # Upload package to test.pypi
+    pre-commit-checks   # Run pre-commit-checks.
+    serve-docs          # Serve the documentation
+    tar-source          # Package repository as tar for easy distribution
+    upgrade             # Upgrade project dependencies
 ```
 
 ### pyproject.toml
@@ -91,7 +92,7 @@ metadata file.
 To create a python wheel for testing locally, or distributing to colleagues
 run:
 
-* `make package-source`
+* `just package-source`
 
 A `tar` and `whl` file will be stored in a `dist/` directory. The `whl` file
 can be installed as follows:
@@ -102,12 +103,12 @@ can be installed as follows:
 
 Publishing for public use can be achieved with:
 
-* `make package-upload-test` or `make package-upload`
+* `just package-upload-test` or `just package-upload`
 
-`make-package-upload-test` will upload the package to [test.pypi.org][pypi-1]
+`just-package-upload-test` will upload the package to [test.pypi.org][pypi-1]
 which provides a way to look at package metadata and documentation and ensure
 that it is correct before uploading to the official [pypi.org][pypi-2]
-repository using `make package-upload`.
+repository using `just package-upload`.
 
 [pypi-1]: https://test.pypi.org
 [pypi-2]: https://pypi.org
